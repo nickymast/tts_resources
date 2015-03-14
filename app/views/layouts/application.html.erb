@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
   <meta charset="utf-8">
-  <title>TtsResources</title>
+  <title>TTS Resources</title>
 
   <!-- Latest compiled and minified CSS -->
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap.min.css">
@@ -20,44 +20,65 @@
 
 </head>
 <body>
-  <nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
-    <!-- Brand and toggle get grouped for better mobile display -->
-    <div class="navbar-header">
-      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
-        <span class="sr-only">Toggle navigation</span>
-        <span class="icon-bar"></span>
-        <span class="icon-bar"></span>
-        <span class="icon-bar"></span>
-      </button>
-      <%= link_to 'TTS Resources', root_url, :class => "navbar-brand" %>
-    </div>
 
-    <!-- Collect the nav links, forms, and other content for toggling -->
-    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-      <ul class="nav navbar-nav">
-        <li><%= link_to "Categories", categories_url %></li>
-        <li><%= link_to "Resources", resources_url %></li>
-        <li><%= link_to 'About', 'pages/about' %></li>
-      </ul>
-      <ul class="nav navbar-nav navbar-right">
-        <%= render 'devise/menu/registration_items' %>
-        <%= render 'devise/menu/login_items' %>
-      </ul>
-    </div><!-- /.navbar-collapse -->
-  </nav>
 
-  <div class="container">
-    <% if notice.present? %>
-      <div class="alert alert-dismissable alert-success">
-        <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
-        <%= notice %>
+
+   <nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
+      <!-- Brand and toggle get grouped for better mobile display -->
+      <div class="navbar-header">
+        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+          <span class="sr-only">Toggle navigation</span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+        <%= link_to 'TTS Resources', root_url, :class => "navbar-brand" %>
       </div>
-    <% end %>
 
-    <p class="notice"><%= notice %></p>
-    <p class="alert"><%= alert %></p>
+      <!-- Collect the nav links, forms, and other content for toggling -->
+      <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+        <ul class="nav navbar-nav">
+          <li><%= link_to "Categories", categories_url %></li>
+          <li><%= link_to "Resources", resources_url %></li>
+          <li><%= link_to 'About', 'pages/about' %></li>
+        </ul>
+        <ul class="nav navbar-nav navbar-right">
+          <%= render 'devise/menu/registration_items' %>
+          <%= render 'devise/menu/login_items' %>
+        </ul>
+      </div><!-- /.navbar-collapse -->
+    </nav>
 
-    <%= yield %>
-  </div>
+    <div class="container">
+      <% if notice.present? %>
+        <div class="alert alert-dismissable alert-success">
+          <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
+          <%= notice %>
+        </div>
+      <% end %>
+
+      <p class="notice"><%= notice %></p>
+      <p class="alert"><%= alert %></p>
+
+     <%= yield %>
+   </div>
+
+
+  <footer>
+    <div class="container-fluid footer">
+      <div class="col-sm-4 left">
+        TTS Resources &copy; <%= Time.now.year %>
+      </div>
+
+      <div class="col-sm-4 center">
+        <%= link_to "Contributors", pages_about_path %>
+      </div>
+
+      <div class="col-sm-4 right">
+        <a href="https://github.com/siakaramalegos/tts_resources" target="_blank">Sourcecode</a>
+      </div>
+    </div>
+  </footer>
+
 </body>
 </html>
